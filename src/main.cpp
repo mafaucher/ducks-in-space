@@ -4,7 +4,7 @@
  * Last Modified: 11/07/19
  * 
  * Description:
- * Main program file.
+ * Main program file including GLUT Functions
  */
 
 #include <GL/glut.h>
@@ -12,10 +12,53 @@
 using namespace std;
 
 #include "global.h"   // Global variables and constants
-#include "display.h"  // GLUT Display Function
-#include "reshape.h"  // GLUT Reshape Function
-#include "input.h"    // GLUT Keyboard/Mouse Input Functions
-#include "idle.h"     // GLUT Idle Function
+
+void display(void)
+{
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glPushMatrix();
+    // Code here
+    glPopMatrix();
+    glutSwapBuffers();
+}
+
+void reshape(int w, int h)
+{
+    width = w;
+    height = h;
+    glViewport(0, 0, (GLsizei) w, (GLsizei) h);
+    glLoadIdentity();
+    gluPerspective((GLfloat) fov, (GLfloat) w / (GLfloat) h, zNear, zFar);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    gluLookAt(cx, cy, cz, cx + dx, cy + dy, cz + dz, 0.0, 0.0, -1.0);
+}
+
+void keyboard(unsigned char key, int x, int y)
+{
+
+}
+
+void specialKey(int key, int x, int y)
+
+{
+
+}
+
+void idle(void)
+{
+    glutPostRedisplay();
+}
+
+// OpenGL Initialisation
+void init(void)
+{
+    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glShadeModel(GL_FLAT);
+    glEnable(GL_LINE_SMOOTH);
+    glEnable(GL_DEPTH_TEST);
+    glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
+}
 
 int main(int argc, char** argv)
 {
@@ -28,7 +71,7 @@ int main(int argc, char** argv)
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
     glutKeyboardFunc(keyboard);
-    glutSpecialFunc(specialKeys);
+    glutSpecialFunc(specialKey);
     glutIdleFunc(idle);
     glutMainLoop();
 
