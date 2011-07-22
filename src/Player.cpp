@@ -1,20 +1,10 @@
-/*
- * Player.cpp
- *
- * Description:
- * Player Class.
- *
- * Last Modified:   11/07/22
- * Changelog:       
- */
-
 #include "Player.h"
 
 #include <GL/glut.h>
 
 using namespace std;
 
-Player()
+Player::Player()
 {
     setLives(3);
     setLives(3);
@@ -23,9 +13,9 @@ Player()
     setZPos(0);
 }
 
-// ~Player();
+// Player::~Player(); // Using default
 
-void draw()
+void Player::draw()
 {
     glPushMatrix();
     glColor3f(1.0, 1.0, 1.0);

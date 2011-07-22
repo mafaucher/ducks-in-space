@@ -1,23 +1,13 @@
-/*
- * Obstacle.cpp
- *
- * Description:
- * Main Obstacle Class.
- *
- * Last Modified:   11/07/22
- * Changelog:
- */
-
 #include <stdlib.h>
 #include <time.h>
 #include "Obstacle.h"
 
-Obstacle()
+Obstacle::Obstacle()
 {
     Obstacle(NULL);
 }
 
-Obstacle(const Obstacle &prev)
+Obstacle::Obstacle(Obstacle* prev)
 {
     srand( time(NULL) );
     setNext(prev);
@@ -26,8 +16,6 @@ Obstacle(const Obstacle &prev)
     setYPos(0);
 }
 
-// ~Obstacle() 
+// Obstacle::~Obstacle()
         
-// void draw()
-
-#endif
+// void Obstacle::draw()

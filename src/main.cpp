@@ -5,8 +5,8 @@
  * Main program file including GLUT Functions for the OpenGL game
  * 'Parachute Drop'.
  *
- * Last Modified:   11/07/21
- * Changelog:       
+ * Last Modified:   11/07/19
+ * Changelog:       11/07/19 - Basic GLUT functions
  */
 
 #include <GL/glut.h>
@@ -14,9 +14,6 @@
 using namespace std;
 
 #include "global.h"       // Global variables and constants
-#include "Camera.h"       // Camera movement
-#include "Player.h"       // Player drawing and horizontal movement
-#include "ObstacleList.h" // Linked List of obstacles moving vertically
 
 // GLUT Display Function
 void display(void)
@@ -34,14 +31,10 @@ void display(void)
 // GLUT Reshape Function
 void reshape(int w, int h)
 {
+    // Set global variables & adjust view
     width = w;
     height = h;
     glViewport(0, 0, (GLsizei) w, (GLsizei) h);
-    glLoadIdentity();
-    gluPerspective((GLfloat) fov, (GLfloat) w / (GLfloat) h, zNear, zFar);
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    gluLookAt(cx, cy, cz, cx + dx, cy + dy, cz + dz, 0.0, 0.0, -1.0);
 }
 
 // GLUT Keyboard Function
@@ -74,9 +67,6 @@ void init(void)
 
 int main(int argc, char** argv)
 {
-    Player player;
-    ObstacleList obstacles;
-
     // GLUT initialisation and callbacks
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);

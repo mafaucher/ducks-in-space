@@ -5,7 +5,7 @@
  * Player Class.
  *
  * Last Modified:   11/07/22
- * Changelog:       
+ * Changelog:       11/07/22 - Constructor, Accessors, Mutators
  */
 
 #ifndef PLAYER_H

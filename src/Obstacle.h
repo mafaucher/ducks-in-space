@@ -5,7 +5,7 @@
  * Main Obstacle Class.
  *
  * Last Modified:   11/07/22
- * Changelog:
+ * Changelog:       11/07/22 - Constructor, Accessors, Mutators
  */
 
 #ifndef OBSTACLE_H
@@ -26,6 +26,7 @@ class Obstacle
         
         void setNext(Obstacle* next) { this->next = next; }
         void setXPos(float x)        { this->xPos = x; }
+        void setYPos(float y)        { this->yPos = y; }
         void setZPos(float z)        { this->zPos = z; }
         
         Obstacle* getNext() { return this->next; }

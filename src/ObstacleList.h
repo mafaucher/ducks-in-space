@@ -2,14 +2,16 @@
  * ObstacleList.h
  *
  * Description:
- * Singly Linked List of Obstacles Main Obstacle Class.
+ * Singly Linked List of Obstacles.
  *
  * Last Modified:   11/07/22
- * Changelog:
+ * Changelog:       11/07/22 - Constructor, Accessors, Mutators
  */
 
 #ifndef OBSTACLE_LIST_H
 #define OBSTACLE_LIST_H
+
+#include "Obstacle.h"
 
 class ObstacleList
 {
@@ -18,7 +20,7 @@ class ObstacleList
         Obstacle* last;
 
     public:
-        ObstacleList() { first = last = NULL; }
+        ObstacleList() {}
         // ~ObstacleList(); // Using default
         
         void setFirst(Obstacle* first) { this->first = first; }
