@@ -1,27 +1,37 @@
 /*
  * main.cpp
  *
- * Last Modified: 11/07/19
- * 
  * Description:
- * Main program file including GLUT Functions
+ * Main program file including GLUT Functions for the OpenGL game
+ * 'Parachute Drop'.
+ *
+ * Last Modified:   11/07/21
+ * Changelog:       
  */
 
 #include <GL/glut.h>
 
 using namespace std;
 
-#include "global.h"   // Global variables and constants
+#include "global.h"       // Global variables and constants
+#include "Camera.h"       // Camera movement
+#include "Player.h"       // Player drawing and horizontal movement
+#include "ObstacleList.h" // Linked List of obstacles moving vertically
 
+// GLUT Display Function
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glPushMatrix();
+
     // Code here
+    player.draw();
+    
     glPopMatrix();
     glutSwapBuffers();
 }
 
+// GLUT Reshape Function
 void reshape(int w, int h)
 {
     width = w;
@@ -34,17 +44,19 @@ void reshape(int w, int h)
     gluLookAt(cx, cy, cz, cx + dx, cy + dy, cz + dz, 0.0, 0.0, -1.0);
 }
 
+// GLUT Keyboard Function
 void keyboard(unsigned char key, int x, int y)
 {
 
 }
 
+// GLUT Special Keyboard Function
 void specialKey(int key, int x, int y)
-
 {
 
 }
 
+// GLUT Idle Function
 void idle(void)
 {
     glutPostRedisplay();
@@ -62,6 +74,9 @@ void init(void)
 
 int main(int argc, char** argv)
 {
+    Player player;
+    ObstacleList obstacles;
+
     // GLUT initialisation and callbacks
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
