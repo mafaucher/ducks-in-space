@@ -2,6 +2,8 @@
 
 = Creating a Local Copy of the Code =
 
+_If you use Turtoise SVN the commands will be different but the principle is the same._
+
 First you need to create a local copy of the repository, you can `checkout` the repo with the following command (available from the `source` tab of our project):
 
 {{{
