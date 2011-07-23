@@ -7,13 +7,13 @@ _If you use Turtoise SVN the commands will be different but the principle is the
 First you need to create a local copy of the repository, you can `checkout` the repo with the following command (available from the `source` tab of our project):
 
 {{{
-svn checkout https://rate-my-boss.googlecode.com/svn/trunk/ <ProjectFolderName> --username <UserName>
+svn checkout https://parachute-drop.googlecode.com/svn/trunk/ <ProjectFolderName> --username <UserName>
 }}}
 
 that's all one line, e.g. I wrote:
 
 {{{
-svn checkout https://rate-my-boss.googlecode.com/svn/trunk/ rate-my-boss --username ma.faucher
+svn checkout https://parachute-drop.googlecode.com/svn/trunk/ parachute-drop --username ma.faucher
 }}}
 
 = Main commands =
@@ -86,15 +86,15 @@ svn revert <filename>
 Now if you made a major mistake, and screwed up the whole repo, there is a way to roll-back to an old version of the repo. Let's say we are at version 56, and we want to go back to version 55:
 
 {{{
-svn merge --dry-run -r 56:55 https://rate-my-boss.googlecode.com/svn/trunk/
-svn merge -r 56:55 https://rate-my-boss.googlecode.com/svn/trunk/
+svn merge --dry-run -r 56:55 https://parachute-drop.googlecode.com/svn/trunk/
+svn merge -r 56:55 https://parachute-drop.googlecode.com/svn/trunk/
 svn commit -m "Reverted to revision 55."
 }}}
 
 The `dry-run` allows you to see what would be rolled-back without actually doing anything. Alternatively you can use the `diff` command to see the difference between two versions:
 
 {{{
-svn diff -r 56:55 https://rate-my-boss.googlecode.com/svn/trunk/
+svn diff -r 56:55 https://parachute-drop.googlecode.com/svn/trunk/
 }}}
 
 = More Info =
