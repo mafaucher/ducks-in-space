@@ -10,11 +10,13 @@ First you need to create a local copy of the repository, you can `checkout` the 
 svn checkout https://parachute-drop.googlecode.com/svn/trunk/ <ProjectFolderName> --username <UserName>
 }}}
 
-that's all one line, e.g. I wrote:
+The <UserName> is your google code username, e.g. I wrote:
 
 {{{
 svn checkout https://parachute-drop.googlecode.com/svn/trunk/ parachute-drop --username ma.faucher
 }}}
+
+You can find your password by going here: https://code.google.com/hosting/settings
 
 = Main commands =
 
