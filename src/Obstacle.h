@@ -11,12 +11,14 @@
 
 #ifndef OBSTACLE_H
 #define OBSTACLE_H
+
+#include <GL/glut.h>
 #include "global.h"
 
 class Obstacle
 {
     private:
-        Obstacle* next;
+        Obstacle next;
         float xPos;
         float yPos;
         float zPos;
@@ -36,7 +38,7 @@ class Obstacle
         float getYPos()     { return this->yPos; }
         float getZPos()     { return this->zPos; }
 
-        // void draw();
+        void draw();
 };
 
 #endif

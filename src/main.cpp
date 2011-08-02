@@ -32,7 +32,9 @@ void display(void)
     glPushMatrix();
 
     // Code here
-    player.draw();
+    //player.draw();
+    obstacles.add();
+    obstacles.draw();
     
     glPopMatrix();
     glutSwapBuffers();
@@ -87,6 +89,7 @@ int main(int argc, char** argv)
     glutInitWindowSize(width, height);
     glutCreateWindow("Parachute Drop");
     init();
+
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
     glutKeyboardFunc(keyboard);

@@ -2,20 +2,21 @@
 #include <stdlib.h>
 #include <time.h>
 
-Obstacle::Obstacle()
-{
-    Obstacle(NULL);
-}
-
-Obstacle::Obstacle(Obstacle* prev)
+Obstacle::Obstacle(Obstacle* prev=NULL)
 {
     srand( time(NULL) );
-    setNext(prev);
     setXPos( rand() % GAME_WIDTH  );
     setYPos( rand() % GAME_HEIGHT );
     setZPos(GAME_DEPTH);
+    prev->setNext(this);
 }
 
-// Obstacle::~Obstacle()
+// Obstacle::~Obstacle() // Using default
         
-// void Obstacle::draw()
+void Obstacle::draw()
+{
+    glPushMatrix();
+    glTranslatef(getXPos(), getYPos(), getZPos());
+    glutWireTeapot(1.0);
+    glPopMatrix();
+}

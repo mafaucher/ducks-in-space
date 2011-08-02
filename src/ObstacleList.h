@@ -12,6 +12,7 @@
 #ifndef OBSTACLE_LIST_H
 #define OBSTACLE_LIST_H
 
+#include <GL/glut.h>
 #include "Obstacle.h"
 #include "global.h"
 
@@ -32,6 +33,8 @@ class ObstacleList
 
         void add();
         void remove();
+
+        void draw();
 };
 
 #endif
