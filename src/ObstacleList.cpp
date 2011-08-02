@@ -1,26 +1,35 @@
 #include "ObstacleList.h"
 
-// Add a random obstacle to the tail of the list
+// Add a random obstacle at the head
 void ObstacleList::add()
 {
-    Obstacle newObs(last);
-    setLast(&newObs);
-    if (!first)
-        setFirst(&newObs);
+    Obstacle *temp;
+    temp = (Obstacle*)malloc(sizeof(Obstacle));
+    temp = new Obstacle(last);
+
+    //Obstacle newObs(last);
+    //setLast(&newObs);
+    //if (first != NULL)
+    //    setFirst(&newObs);
 }
 
-// Remove the first obstacle in the list
+// Remove the tail
 void ObstacleList::remove()
 {
-    Obstacle* temp = first;
-    setFirst( first->getNext() );
-    delete &temp;
+    //setFirst( first->getNext() );
+
+    Obstacle *temp;
+    temp = (Obstacle*)malloc(sizeof(Obstacle));
+    temp = first;
+    first = temp->getNext();
+    free(temp);
 }
 
+// Draw all obstacles
 void ObstacleList::draw()
 {
     Obstacle* temp = first;
-    while (temp)
+    while (temp != NULL)
     {
         temp->draw();
         temp = temp->getNext();

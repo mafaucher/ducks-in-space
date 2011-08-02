@@ -33,7 +33,6 @@ void display(void)
 
     // Code here
     //player.draw();
-    obstacles.add();
     obstacles.draw();
     
     glPopMatrix();
@@ -54,6 +53,9 @@ void keyboard(unsigned char key, int x, int y)
 {
     switch (key)
     {
+        case 'o':
+            obstacles.add();
+        break;
         case 27: // <ESC> to quit
             exit(0);
     }

@@ -18,7 +18,7 @@
 class Obstacle
 {
     private:
-        Obstacle next;
+        Obstacle* next;
         float xPos;
         float yPos;
         float zPos;
