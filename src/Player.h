@@ -6,10 +6,12 @@
  *
  * Last Modified:   11/07/22
  * Changelog:       11/07/22 - Constructor, Accessors, Mutators
+ *                  11/08/02 - Adapted for helicopter
  */
 
 #ifndef PLAYER_H
 #define PLAYER_H
+#include "global.h"
 
 class Player
 {
@@ -18,7 +20,7 @@ class Player
         int health;
         int points;
         float xPos;
-        float zPos;
+        float yPos;
 
     public:
         Player();
@@ -28,13 +30,13 @@ class Player
         void setHealth(int health) { this->health  = health; }
         void setPoints(int points) { this->points  = points; }
         void setXPos(float xPos)   { this->xPos    = xPos; }
-        void setZPos(float zPos)   { this->zPos    = zPos; }
+        void setYPos(float yPos)   { this->yPos    = yPos; }
 
         int getLives()  { return this->lives; }
         int getHealth() { return this->health; }
         int getPoints() { return this->points; }
         float getXPos() { return this->xPos; }
-        float getZPos() { return this->zPos; }
+        float getYPos() { return this->yPos; }
 
         void draw();
 };

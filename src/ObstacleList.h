@@ -6,12 +6,14 @@
  *
  * Last Modified:   11/07/22
  * Changelog:       11/07/22 - Constructor, Accessors, Mutators
+ *                  11/08/02 - Adapted for helicopter
  */
 
 #ifndef OBSTACLE_LIST_H
 #define OBSTACLE_LIST_H
 
 #include "Obstacle.h"
+#include "global.h"
 
 class ObstacleList
 {

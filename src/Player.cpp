@@ -9,8 +9,8 @@ Player::Player()
     setLives(3);
     setLives(3);
     setPoints(0);
-    setXPos(0);
-    setZPos(0);
+    setXPos( GAME_WIDTH  /2 );
+    setYPos( GAME_HEIGHT /2 );
 }
 
 // Player::~Player(); // Using default

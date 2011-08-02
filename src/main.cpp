@@ -14,6 +14,16 @@
 using namespace std;
 
 #include "global.h"       // Global variables and constants
+#include "Camera.h"       // Camera movement
+#include "Player.h"       // Player drawing and x/y movement
+#include "ObstacleList.h" // Linked List of obstacles and z movement
+
+int width  = WIDTH;       // Current window width
+int height = HEIGHT;      // Current window height
+
+Camera cam;
+Player player;
+ObstacleList obstacles;
 
 // GLUT Display Function
 void display(void)
@@ -40,7 +50,11 @@ void reshape(int w, int h)
 // GLUT Keyboard Function
 void keyboard(unsigned char key, int x, int y)
 {
-
+    switch (key)
+    {
+        case 27: // <ESC> to quit
+            exit(0);
+    }
 }
 
 // GLUT Special Keyboard Function
@@ -59,7 +73,7 @@ void idle(void)
 void init(void)
 {
     glClearColor(0.0, 0.0, 0.0, 0.0);
-    glShadeModel(GL_FLAT);
+    glShadeModel(GL_SMOOTH);
     glEnable(GL_LINE_SMOOTH);
     glEnable(GL_DEPTH_TEST);
     glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);

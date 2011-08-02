@@ -2,8 +2,8 @@
 
 Camera::Camera()
 {
-    setPerspective(45.5, 0.1, 100.0);
-    setLookAt(0.0, -1.0, 0.0); 
+    setPerspective(45.0, 0.1, GAME_DEPTH);
+    setLookAt(0.0, 0.0, -1.0);
 }
 
 // Camera::~Camera(); // Using default

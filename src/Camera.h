@@ -6,10 +6,12 @@
  *
  * Last Modified:   11/07/22
  * Changelog:       11/07/22 - Constructor, Accessors, Mutators
+ *                  11/08/02 - Adapted for helicopter
  */
 
 #ifndef CAMERA_H
 #define CAMERA_H
+#include "global.h"
 
 class Camera
 {
