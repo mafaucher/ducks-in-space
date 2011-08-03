@@ -2,7 +2,7 @@
 
 = Creating a Local Copy of the Code =
 
-_If you use Turtoise SVN the commands will be different but the principle is the same. Visual Studios supports SVN using the AnkhSVN plugin: http://ankhsvn.open.collab.net_
+_If you use Tortoise SVN the commands will be different but the principle is the same. Visual Studios supports SVN using the AnkhSVN plugin: http://ankhsvn.open.collab.net_
 
 First you need to create a local copy of the repository, you can `checkout` the repo with the following command (available from the `source` tab of our project):
 
